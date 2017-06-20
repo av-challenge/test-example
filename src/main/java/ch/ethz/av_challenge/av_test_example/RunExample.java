@@ -23,11 +23,19 @@ import java.util.List;
 
 public class RunExample {
     static public void main(String[] args) {
+
+    }
+
+    static public void run(Long iterations) {
         AVConfigGroup avConfigGroup = new AVConfigGroup();
         avConfigGroup.setConfigURL(RunExample.class.getResource("av.xml"));
 
         Config config = ConfigUtils.loadConfig(SiouxFallsUtils.getConfigURL(), avConfigGroup, new DvrpConfigGroup());
         Scenario scenario = ScenarioUtils.loadScenario(config);
+
+        if (iterations != null) {
+            config.controler().setLastIteration(iterations.intValue());
+        }
 
         List<String> modes = new LinkedList<>(Arrays.asList(config.subtourModeChoice().getModes()));
         modes.add(AVModule.AV_MODE);
