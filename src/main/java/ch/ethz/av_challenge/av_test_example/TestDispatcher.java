@@ -7,19 +7,19 @@ import ch.ethz.matsim.av.passenger.AVRequest;
 
 public class TestDispatcher implements AVDispatcher{
     public void onRequestSubmitted(AVRequest avRequest) {
-        System.err.println("onRequestSubmitted");
+        //System.err.println("onRequestSubmitted");
     }
 
     public void onNextTaskStarted(AVVehicle avVehicle) {
-        System.err.println("onNextTaskStarted");
+        //System.err.println("onNextTaskStarted");
     }
 
     public void onNextTimestep(double v) {
-        System.err.println("onNextTimestep");
+        //System.err.println("onNextTimestep");
     }
 
     public void addVehicle(AVVehicle avVehicle) {
-        System.err.println("addVehicle");
+        //System.err.println("addVehicle");
     }
 
     static public class TestDispatcherFactory implements AVDispatcherFactory {
